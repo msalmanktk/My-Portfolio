@@ -1,292 +1,525 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--CSS Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F3F5F7" />
+    <meta
+      name="description"
+      content="Muhammad Salman's portfolio — BSCS student and aspiring web developer."
     />
+    <title>Muhammad Salman | Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
-
-    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("salman-portfolio-theme");
+        document.documentElement.dataset.theme = savedTheme || "light";
+      } catch (_) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <title>Jane Doe | Web Developer</title>
   </head>
-
   <body>
-    <!-- Navbar -->
-  <nav>
-        <h1>Salman Ktk</h1>
-        <ul class="navigation">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="burger-menu" id="burger-menu">
-          <ion-icon class="bars" name="menu-outline"></ion-icon>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Salman home"
+          >My<span> Portfolio</span></a
+        >
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
         </button>
-       
-  </nav>
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <img
-        src="assets/images/wfh_1.svg"
-        alt="jane-doe"
-        loading="lazy"
-        class="hero-img"
-      />
-      <div class="bio animate__animated animate__shakeX">
-        <h2 class="bio-title">About Me</h2>
-        <p class="bio-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed
-          dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus
-          inventore tempore minus nemo, iste ullam illo laboriosam maiores
-          repudiandae quos!
+        <ul class="nav-links" id="navLinks">
+          <li><a class="nav-link active" href="#home">Home</a></li>
+          <li>
+            <a class="nav-link" href="#about">About</a>
+            <!-- <span class="transcript">transcript</span> -->
+          </li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link skills" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Switch to dark mode"
+              title="Switch theme"
+            >
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path
+                  d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+                ></path>
+              </svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.6 8.6 0 1 0 20.2 15.3Z"
+                ></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section container" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> Available for learning &
+            collaboration
+          </div>
+          <p class="intro-line">Hello, I'm</p>
+          <h1>Muhammad <span>Salman</span></h1>
+          <h2 class="hero-role">
+            BSCS Student <span class="role-separator">/</span>
+            <span class="typing-text" id="typingText"></span
+            ><span class="typing-cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            I create clean, responsive web experiences and enjoy turning ideas
+            into useful digital products. Currently learning modern frontend
+            development, one project at a time.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"
+              >Explore my work <span aria-hidden="true">↗</span></a
+            >
+            <a class="button button-secondary" href="#contact">Let's connect</a>
+          </div>
+          <div class="social-links" aria-label="Social links">
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="mailto:your-email@example.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+              </svg>
+            </a>
+            <span class="social-note">Find me around the web</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="portrait-card">
+            <div class="portrait-placeholder" id="portraitPlaceholder">
+              <span>MS</span>
+              <small>Add your photo as <code>assets/profile.jpg</code></small>
+            </div>
+            <img
+              class="profile-photo"
+              src="/me.jpg"
+              alt="Portrait of Muhammad Salman"
+              onerror="this.hidden = true"
+            />
+            <div class="portrait-caption">
+              <span class="caption-icon">✦</span>
+              <div>
+                <strong>Curious mind.</strong
+                ><small>Building for the web.</small>
+              </div>
+            </div>
+          </div>
+          <div class="floating-chip chip-code">
+            <span>&lt;/&gt;</span> Frontend
+          </div>
+          <div class="floating-chip chip-spark">✧ Keep creating</div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">A little about me</p>
+            <h2>Curiosity drives <span>my code.</span></h2>
+            <p>
+              I’m a BSCS student who enjoys learning by building, experimenting,
+              and improving a little every day.
+            </p>
+          </div>
+          <div class="about-grid">
+            <article class="about-story pastel-panel">
+              <span class="panel-mark">01 / INTRODUCTION</span>
+              <h3>Learning today. Creating tomorrow.</h3>
+              <p>
+                I’m studying Computer Science at KUSt and developing my skills
+                in frontend web development. I like interfaces that feel simple,
+                thoughtful, and easy to use.
+              </p>
+              <p>
+                My current focus is strengthening my JavaScript fundamentals,
+                learning React, and creating practical projects that solve real
+                problems.
+              </p>
+              <a class="text-link" href="#skills"
+                >Explore my skills <span>→</span></a
+              >
+            </article>
+            <div class="quick-facts">
+              <article class="fact-card">
+                <span class="fact-icon icon-blue">⌘</span>
+                <div>
+                  <h3>Computer Science</h3>
+                  <p>BSCS student · KUSt</p>
+                </div>
+              </article>
+              <article class="fact-card">
+                <span class="fact-icon icon-lavender">✳</span>
+                <div>
+                  <h3>Web Development</h3>
+                  <p>HTML, CSS & JavaScript</p>
+                </div>
+              </article>
+              <article class="fact-card">
+                <span class="fact-icon icon-pink">⚛</span>
+                <div>
+                  <h3>Currently learning</h3>
+                  <p>React.js and modern UI</p>
+                </div>
+              </article>
+              <a
+                style="background: #a0a1a3"
+                class="fact-card transcript-card"
+                href="transcript.html"
+              >
+                <span class="fact-icon icon-blue">↗</span>
+                <div>
+                  <h3>Academic transcript</h3>
+                  <p>View academic record</p>
+                </div>
+                <span class="fact-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="projects">
+        <div class="section-heading heading-row">
+          <div>
+            <p class="section-kicker">Selected work</p>
+            <h2>Projects with <span>purpose.</span></h2>
+          </div>
+          <p>
+            Practice projects that help me learn, experiment, and improve my
+            craft.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <!-- <div class="project-art art-blue">
+              <div class="mock-window">
+                <div class="mock-top"><i></i><i></i><i></i></div>
+                <div class="mock-content">
+                  <div class="mock-sidebar"></div>
+                  <div class="mock-chart">
+                    <span></span><span></span><span></span><span></span
+                    ><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+              <span class="art-label">01 / DASHBOARD</span>
+            </div> -->
+            <div class="project-art art-blue">
+              <div class="project-image-wrap">
+                <img
+                  src="tra.jpg"
+                  alt="Trading Dashboard project preview"
+                  class="project-image"
+                />
+              </div>
+              <span class="art-label">01 / DASHBOARD</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>Dashboard UI</span><span>01</span>
+              </div>
+              <h3>Trading Dashboard</h3>
+              <p>
+                A dashboard concept for presenting financial information with a
+                clean visual hierarchy.
+              </p>
+              <div class="tag-list">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#contact">Project details <span>↗</span></a
+                ><a
+                  href="https://msalmanktk.github.io/sprofitzone/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Trading dashboard GitHub"
+                  >GitHub ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <!-- <div class="project-art art-lavender">
+              <div class="property-mock">
+                <div class="property-photo"></div>
+                <div class="property-lines">
+                  <b></b><i></i><i></i><span></span>
+                </div>
+                <div class="property-mini"></div>
+              </div>
+              <span class="art-label">02 / REAL ESTATE</span>
+            </div> -->
+            <div class="project-art art-lavender">
+              <div class="project-image-wrap">
+                <img
+                  src="sk enerprises.png"
+                  alt="Property Explorer project preview"
+                  class="project-image"
+                />
+              </div>
+              <span class="art-label">02 / REAL ESTATE</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>Web Application</span><span>02</span>
+              </div>
+              <h3>Rental Cars & Real Estate</h3>
+              <p>
+                A property listing interface concept with space for search,
+                filters, and listing cards.
+              </p>
+              <div class="tag-list">
+                <span>Responsive UI</span><span>CSS Grid</span
+                ><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#contact">Project details <span>↗</span></a
+                ><a
+                  href="https://msalmanktk.github.io/SK-Enterprises/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Property explorer GitHub"
+                  >GitHub ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-pink">
+              <div class="project-image-wrap">
+                <img
+                  src="quran-urdu.jpg"
+                  alt="Quran with Urdu translation project preview"
+                  class="project-image"
+                />
+              </div>
+              <span class="art-label">03 / EDUCATION</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>Learning Platform</span><span>03</span>
+              </div>
+              <h3>Quran-Urdu-Translation UI</h3>
+              <p>
+                A calm reading experience concept for Quran text and Urdu
+                translation.
+              </p>
+              <div class="tag-list">
+                <span>Accessibility</span><span>Typography</span
+                ><span>UI Design</span>
+              </div>
+              <div class="project-links">
+                <a href="#contact">Project details <span>↗</span></a
+                ><a
+                  href="https://msalmanktk.github.io/QuranUrduTarjuma/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Quran translation GitHub"
+                  >GitHub ↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="section-footnote">
+          Project cards are starter examples. Replace descriptions and links
+          with your real projects before publishing.
         </p>
-      </div>
-    </section>
-    <!-- More about -->
-    <section class="more-about">
-      <h2>More About Me</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        nesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,
-        autem deleniti cupiditate molestias quis unde quae totam porro dicta
-        iure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-        nostrum dolor minus, libero delectus praesentium perferendis
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-        consequuntur labore? Ea totam voluptas amet!
-      </p>
-    </section>
-    <!-- Skills section -->
-    <section class="skills" id="skills">
-      <h2 class="skill-header">My Top Skills</h2>
+      </section>
 
-      <div class="skills-wrapper">
-        <div class="first-set animate__animated animate__pulse">
-          <img
-            src="assets/icons/icons8-html-5.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-css3.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-javascript.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
+      <section class="section skills-section" id="skills">
+        <div class="container">
+          <div class="section-heading centered-heading">
+            <p class="section-kicker">Tools in my toolbox</p>
+            <h2>Skills I’m <span>growing.</span></h2>
+            <p>
+              A growing set of tools I use while learning and building for the
+              web.
+            </p>
+          </div>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <span class="skill-logo logo-html">5</span>
+              <h3>HTML5</h3>
+              <p>Semantic structure</p>
+            </article>
+            <article class="skill-card">
+              <span class="skill-logo logo-css">3</span>
+              <h3>CSS3</h3>
+              <p>Layouts & styling</p>
+            </article>
+            <article class="skill-card">
+              <span class="skill-logo logo-js">JS</span>
+              <h3>JavaScript</h3>
+              <p>Interactive UI</p>
+            </article>
+            <article class="skill-card">
+              <span class="skill-logo logo-react">⚛</span>
+              <h3>React.js</h3>
+              <p>Currently learning</p>
+            </article>
+            <article class="skill-card">
+              <span class="skill-logo logo-git">◆</span>
+              <h3>Git & GitHub</h3>
+              <p>Version control</p>
+            </article>
+            <article class="skill-card">
+              <span class="skill-logo logo-ui">✦</span>
+              <h3>Responsive UI</h3>
+              <p>Mobile-first layouts</p>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="second-set animate__animated animate__pulse">
-          <img
-            src="assets/icons/icons8-bootstrap.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-react-native.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-          <img
-            src="assets/icons/icons8-git.svg"
-            alt=""
-            loading="lazy"
-            class="icon icon-card"
-          />
-        </div>
-      </div>
-    </section>
-    <!-- Projects section -->
-    <section class="projects" id="projects">
-      <h2 class="projects-title">Some of my Recent Projects</h2>
-      <div class="projects-container">
-        <div class="project-container project-card">
-          <img
-            src="assets/images/expenseTracker.png"
-            alt="expense-tracker"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Expense Tracker</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/netflixClone.png"
-            alt="netflic-clone"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Netflix Clone</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/greenyEarth.png"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Greeny Earth</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-      </div>
-    </section>
-    <!-- Contact section -->
-    <section class="contact" id="contact">
-      <h2>Get In Touch With Me</h2>
-      <div class="contact-form-container">
-        <div class="contact-form">
-          <form action="https://formspree.io/f/xzzrbvlb" method="POST">
-            <div class="form-control">
-              <label for="name">Name</label>
-              <input
-                type="text"
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="contact-panel">
+            <div class="contact-copy">
+              <p class="section-kicker">Have an idea?</p>
+              <h2>Let’s make something <span>meaningful.</span></h2>
+              <p>
+                Have a project idea, suggestion, or opportunity to learn
+                together? Send me a message.
+              </p>
+              <div class="contact-detail">
+                <span class="contact-detail-icon">✉</span>
+                <div>
+                  <small>Email me: </small>
+                  <a href="mailto:msalmanktk009@gmail.com"
+                    >msalmanktk009@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail-icon">⌘</span>
+                <div>
+                  <small>Find my work</small
+                  ><a
+                    href="https://github.com//msalmanktk"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub profile ↗</a
+                  >
+                </div>
+              </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+              <label for="name">Your name</label
+              ><input
                 id="name"
-                name="sender-name"
-                placeholder="Enter Your Name"
-                class="input-field"
+                name="name"
+                autocomplete="name"
+                placeholder="e.g. Alex Khan"
                 required
               />
-            </div>
-            <div class="form-control">
-              <label for="email">Email</label>
-              <input
-                type="email"
+              <label for="email">Email address</label
+              ><input
                 id="email"
-                name="sender-email"
-                placeholder="Enter Your Email"
-                class="input-field"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
                 required
               />
-            </div>
-            <div class="form-control">
-              <label for="message">Message</label>
-              <textarea
+              <label for="message">Your message</label
+              ><textarea
                 id="message"
-                cols="60"
-                rows="10"
-                placeholder="Enter Your Message"
                 name="message"
-                class="input-field"
+                rows="4"
+                placeholder="Tell me what you have in mind..."
                 required
               ></textarea>
-            </div>
-            <input
-              type="submit"
-              value="Submit"
-              id="submit-btn"
-              class="submit-btn"
-            />
-          </form>
+              <button class="button button-primary form-submit" type="submit">
+                Prepare message <span>↗</span>
+              </button>
+              <p class="form-status" id="formStatus" role="status">
+                This form opens your email app; it does not send data to a
+                server.
+              </p>
+            </form>
+          </div>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#home">salman<span>.</span></a>
+        <p>Designed with curiosity and a little pastel.</p>
+        <p>© <span id="year"></span> Muhammad Salman</p>
       </div>
-    </section>
+    </footer>
 
-    <!-- Social accounts - Fixed to the right -->
-    <div class="socials">
-      <a href="#" target="_blank"
-        ><img
-          src="assets/icons/icons8-twitter-circled.gif"
-          alt="Twitter"
-          loading="lazy"
-          class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="assets/icons/icons8-instagram.gif"
-          alt="Instagram"
-          loading="lazy"
-          class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="assets/icons/icons8-linkedin-circled.gif"
-          alt="Linkedin"
-          loading="lazy"
-          class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img src="assets/icons/icons8-github.gif" alt="Github" class="socicon"
-      /></a>
-      </div>
-    <!-- Scroll to top -->
-      
-    <i class="scroll-up" id="scroll-up"
-    ><img
-      src="assets/icons/icons8-upward-arrow.gif"
-      class="socicon up-arrow"
-      alt="scroll-up"
-  /></i>
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/923159957806"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Let's talk on WhatsApp"
+    >
+      <img src="whatsapp.logo.png" alt="" class="whatsapp-logo" />
+      <span>Let's Talk ↗</span>
+    </a>
 
-    <!-- Footer section -->
-    <footer>
-      <p class="copy">&copy; Copyright 2021</p>
-      <p class="copy">
-        Built with &#x2661; by
-        <a href="https://twitter.com/koladechris" target="_blank"
-          >Kolade Chris (Ksound)</a
-        >
-      </p>
-</footer>
-     <!-- Website scripts -->
-     <script src="assets/js/app.js"></script>
-
-     <!-- Ion icons scripts -->
-     <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-     ></script>
-     <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

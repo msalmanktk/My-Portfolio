@@ -1,57 +1,27 @@
-# EBOOK PORTFOLIO
+# My-Portfolio
 
-A portfolio website template for campers
-hello 
-![jane-doe](jane-shot.png)
+A responsive Soft Pastel portfolio starter for Muhammad Salman.
 
-## Author
+## Files
+- `index.html` — main portfolio
+- `transcript.html` — sample academic transcript page
+- `css/style.css` — main design, components, colors and theme variables
+- `css/responsive.css` — tablet/mobile breakpoints and responsive behavior
+- `js/script.js` — theme toggle, mobile navigation, active navbar links and contact form
+- `assets/profile.jpg` — add your own portrait here (optional)
 
-[@koladechris](https://www.twitter.com/koladechris)
+## Run locally
+Open `index.html` in your browser. For the best development experience, use VS Code with Live Server.
 
-## Github repo
+## Personalize before publishing
+1. Replace `your-email@example.com` in `index.html` and `js/script.js` with your actual email.
+2. Replace generic GitHub/LinkedIn URLs with your own profiles.
+3. Add your portrait at `assets/profile.jpg`.
+4. Update project names, descriptions and repository/demo links to match your real work.
+5. Replace sample transcript data with your official record, or remove the transcript link/page if you don't want it public.
 
-This is the [link](https://github.com/Ksound22/ebook-portfolio) to the Github repo of the project
+The contact form uses `mailto:` to prepare a message in the visitor's email app. It does not send messages to a server by itself.
 
-## Sample Website
 
-A sample is already available via this [link](https://eager-williams-af0d00.netlify.app/?)
-
-## Tech Stack
-
-**Client:** HTML, CSS, Vanilla JavaSCript
-
-## Tools Used
-
-Below are are list of tools used, and the precise things they were used for:
-
-- [Ion Icons](https://ionic.io/ionicons) for hambuger menu bar
-- [Drawkit](https://www.drawkit.io/) for Jane Doe illustration
-- [Icon8](https://icons8.com/) for animated icons and skills icons
-- [Animate CSS](https://animate.style/) for Jane Doe's bio animation
-- [Formspree](https://formspree.io/) for contact form submision and straight delivery to Gmail
-
-## Folder Structure
-
-The index.html and readme files are in the root folder, alongside the screenshot included in the readme.
-
-The assets folder contains the CSS and JavaScript files, all images and icons used, in their respective folders.
-
-## Customization Guide
-
-The various sections in the HTML and CSS are well commented, so feel free to change whatever doesn't suit you need.
-
-The JavaScript functions are commented too, so you will know what the functions and selections do.
-
-I used Ion Icons and Icons8 for the icons, but feel free to use fontawesome or any other icon library you want.
-
-For the form submission, formspree was used. You can get a hands-on tutorial on how to use formspree by watching this [YouTube video](https://formspree.io/). Submissions will be delivered straignt into the specified Gmail account.
-
-In addition to formspree, you can also use Netlify form submission in case you deploy there. Brad Traversy has a [video tutorial](https://www.youtube.com/watch?v=6ElQ689HRcY) on how to do it.
-
-If you encounter problems customizing, reach out to me by sending me a DM on my [Twitter](https://www.twitter.com/koladechris).
-
-## Acknowledgements
-
-- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+## Visual theme
+The portfolio uses the **Grey Clouds + Bright Edges** palette: dark cloud grey (`#343A40`), silver grey (`#858B94`), bright cloud edges (`#E8EDF2`), and cool sky blue (`#B7C9D9`). The palette is centralized in `css/style.css` using `:root` design tokens and supports both light and dark modes.
