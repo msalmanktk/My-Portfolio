@@ -109,10 +109,10 @@
       `${message}\n\nFrom: ${name}\nEmail: ${email}`,
     );
     status.textContent = "Opening your email app…";
-    window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:msalmanktkk009@gmail.com?subject=${subject}&body=${body}`;
   });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // document.getElementById("year").textContent = new Date().getFullYear();
 
   // Typewriter animation
   const typingText = document.getElementById("typingText");
