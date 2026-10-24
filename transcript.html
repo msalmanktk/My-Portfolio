@@ -1,44 +1,296 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Academic Transcript | Muhammad Salman</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css">
-  <script>try{document.documentElement.dataset.theme=localStorage.getItem("salman-portfolio-theme")||"light"}catch(_){document.documentElement.dataset.theme="light"}</script>
-  <style>
-    .transcript-main{padding-block:70px 100px}.transcript-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.transcript-top h1{font:800 clamp(2rem,4vw,3rem)/1.15 var(--font-heading);letter-spacing:-.06em;margin:0 0 8px}.transcript-top p{margin:0;color:var(--text-soft)}.transcript-stats{display:flex;gap:12px}.transcript-stat{min-width:110px;padding:15px 20px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:16px}.transcript-stat b{display:block;font:800 1.5rem var(--font-heading);color:var(--blue-deep)}.transcript-stat small{color:var(--text-soft)}.semester-card{margin-top:18px;overflow:hidden;border:1px solid var(--border);border-radius:18px;background:var(--surface)}.semester-card h2{display:flex;justify-content:space-between;gap:15px;margin:0;padding:17px 20px;background:var(--surface-soft);font-size:1rem}.semester-card h2 span{color:var(--blue-deep);font-size:.88rem}.table-wrap{overflow-x:auto}table{width:100%;min-width:620px;border-collapse:collapse;font-size:.88rem}th,td{padding:12px 18px;text-align:left;border-top:1px solid var(--border)}th{color:var(--text-soft);font-size:.75rem;font-weight:700}td:nth-child(n+3),th:nth-child(n+3){text-align:center}tbody tr:hover{background:color-mix(in srgb,var(--blue-pale) 35%,transparent)}.transcript-note{margin:22px 0;color:var(--text-soft);font-size:.82rem}.back-link{display:inline-flex;margin-top:12px;color:var(--blue-deep);font-weight:700}
-    @media(max-width:700px){.transcript-top{align-items:start;flex-direction:column}.transcript-stats{width:100%}.transcript-stat{flex:1}}
-  </style>
-</head>
-<body>
-<header class="site-header"><nav class="navbar container" aria-label="Main navigation"><a class="brand" href="index.html">salman<span>.</span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button><ul class="nav-links" id="navLinks"><li><a class="nav-link" href="index.html#home">Home</a></li><li><a class="nav-link" href="index.html#about">About</a></li><li><a class="nav-link" href="index.html#projects">Projects</a></li><li><a class="nav-link" href="index.html#skills">Skills</a></li><li><a class="nav-link" href="index.html#contact">Contact</a></li><li><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg><svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.6 8.6 0 1 0 20.2 15.3Z"></path></svg></button></li></ul></nav></header>
-<main class="container transcript-main">
-  <div class="transcript-top"><div><p class="section-kicker">Academic profile</p><h1>Academic transcript</h1><p>Muhammad Salman · BSCS · KUSt</p></div><div class="transcript-stats"><div class="transcript-stat"><b id="cgpa">—</b><small>Sample CGPA</small></div><div class="transcript-stat"><b id="credits">—</b><small>Credit hours</small></div></div></div>
-  <div id="transcriptOutput"></div>
-  <p class="transcript-note">Important: the course names and marks below are sample data for layout demonstration. Replace them with your official academic record before using this page.</p>
-  <a class="back-link" href="index.html#about">← Back to portfolio</a>
-</main>
-<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html">salman<span>.</span></a><p>© <span id="year"></span> Muhammad Salman</p></div></footer>
-<script src="js/script.js"></script>
-<script>
-const semesters = [
- {name:"Semester 1",courses:[["CS-101","Programming Fundamentals",4,86],["MT-101","Calculus",3,78],["EN-101","English Composition",3,82],["CS-102","Introduction to ICT",3,90],["IS-101","Islamic Studies",2,88]]},
- {name:"Semester 2",courses:[["CS-201","Object Oriented Programming",4,84],["MT-201","Discrete Structures",3,72],["PH-201","Applied Physics",3,68],["CS-202","Digital Logic Design",3,80],["EN-201","Communication Skills",3,85]]},
- {name:"Semester 3",courses:[["CS-301","Data Structures",4,81],["CS-302","Database Systems",3,87],["MT-301","Linear Algebra",3,74],["CS-303","Computer Organization",3,79],["PS-301","Pakistan Studies",2,91]]},
- {name:"Semester 4",courses:[["CS-401","Web Engineering",4,92],["CS-402","Operating Systems",3,76],["CS-403","Algorithms",3,83],["MT-401","Probability & Statistics",3,77],["CS-404","Software Engineering",3,88]]}
-];
-function gradeFor(mark){return mark>=85?["A",4]:mark>=80?["A-",3.67]:mark>=75?["B+",3.33]:mark>=70?["B",3]:mark>=65?["B-",2.67]:mark>=60?["C+",2.33]:mark>=55?["C",2]:mark>=50?["D",1]:["F",0]}
-let totalPoints=0,totalCredits=0;
-document.getElementById("transcriptOutput").innerHTML=semesters.map(semester=>{
- let points=0,credits=0;
- const rows=semester.courses.map(course=>{const [code,name,hours,marks]=course;const [grade,gp]=gradeFor(marks);points+=gp*hours;credits+=hours;return `<tr><td>${code}</td><td>${name}</td><td>${hours}</td><td>${marks}</td><td>${grade}</td><td>${gp.toFixed(2)}</td></tr>`}).join("");
- totalPoints+=points;totalCredits+=credits;
- return `<section class="semester-card"><h2>${semester.name}<span>Sample GPA ${(points/credits).toFixed(2)}</span></h2><div class="table-wrap"><table><thead><tr><th>Course code</th><th>Course name</th><th>Credits</th><th>Marks</th><th>Grade</th><th>GP</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
-}).join("");
-document.getElementById("cgpa").textContent=(totalPoints/totalCredits).toFixed(2);
-document.getElementById("credits").textContent=totalCredits;
-</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Academic Transcript | Muhammad Salman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("salman-portfolio-theme") || "light";
+      } catch (_) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <style>
+      .transcript-main {
+        padding-block: 70px 100px;
+      }
+      .transcript-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+      .transcript-top h1 {
+        font: 800 clamp(2rem, 4vw, 3rem)/1.15 var(--font-heading);
+        letter-spacing: -0.06em;
+        margin: 0 0 8px;
+      }
+      .transcript-top p {
+        margin: 0;
+        color: var(--text-soft);
+      }
+      .transcript-stats {
+        display: flex;
+        gap: 12px;
+      }
+      .transcript-stat {
+        min-width: 110px;
+        padding: 15px 20px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+      }
+      .transcript-stat b {
+        display: block;
+        font: 800 1.5rem var(--font-heading);
+        color: var(--blue-deep);
+      }
+      .transcript-stat small {
+        color: var(--text-soft);
+      }
+      .semester-card {
+        margin-top: 18px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface);
+      }
+      .semester-card h2 {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        margin: 0;
+        padding: 17px 20px;
+        background: var(--surface-soft);
+        font-size: 1rem;
+      }
+      .semester-card h2 span {
+        color: var(--blue-deep);
+        font-size: 0.88rem;
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        min-width: 620px;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      th,
+      td {
+        padding: 12px 18px;
+        text-align: left;
+        border-top: 1px solid var(--border);
+      }
+      th {
+        color: var(--text-soft);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+      td:nth-child(n + 3),
+      th:nth-child(n + 3) {
+        text-align: center;
+      }
+      tbody tr:hover {
+        background: color-mix(in srgb, var(--blue-pale) 35%, transparent);
+      }
+      .transcript-note {
+        margin: 22px 0;
+        color: var(--text-soft);
+        font-size: 0.82rem;
+      }
+      .back-link {
+        display: inline-flex;
+        margin-top: 12px;
+        color: var(--blue-deep);
+        font-weight: 700;
+      }
+      @media (max-width: 700px) {
+        .transcript-top {
+          align-items: start;
+          flex-direction: column;
+        }
+        .transcript-stats {
+          width: 100%;
+        }
+        .transcript-stat {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="index.html">salman<span>.</span></a
+        ><button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a class="nav-link" href="index.html#home">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li><a class="nav-link" href="index.html#skills">Skills</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Switch to dark mode"
+              title="Switch theme"
+            >
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path
+                  d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+                ></path></svg
+              ><svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.6 8.6 0 1 0 20.2 15.3Z"
+                ></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container transcript-main">
+      <div class="transcript-top">
+        <div>
+          <p class="section-kicker">Academic profile</p>
+          <h1>Academic transcript</h1>
+          <p>Muhammad Salman · BSCS · KUSt</p>
+        </div>
+        <div class="transcript-stats">
+          <div class="transcript-stat">
+            <b id="cgpa">—</b><small>Sample CGPA</small>
+          </div>
+          <div class="transcript-stat">
+            <b id="credits">—</b><small>Credit hours</small>
+          </div>
+        </div>
+      </div>
+      <div id="transcriptOutput"></div>
+      <p class="transcript-note">
+        Important: the course names and marks below are sample data for layout
+        demonstration. Replace them with your official academic record before
+        using this page.
+      </p>
+      <a class="back-link" href="index.html#about">← Back to portfolio</a>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html">salman<span>.</span></a>
+        <p>© <span id="year"></span> Muhammad Salman</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+      const semesters = [
+        {
+          name: "Semester 1",
+          courses: [
+            ["CS-101", "Programming Fundamentals", 4, 72],
+            ["MT-101", "Calculus", 3, 93],
+            ["EN-101", "English Composition", 3, 94],
+            ["CS-102", "Introduction to ICT", 3, 70.5],
+            ["IS-101", "Islamic Studies", 3, 86],
+          ],
+        },
+        {
+          name: "Semester 2",
+          courses: [
+            ["CS-201", "Object Oriented Programming", 4, 84],
+            ["MT-201", "Discrete Structures", 3, 94],
+            ["PH-201", "Applied Physics", 3, 82],
+            ["CS-202", "Digital Logic Design", 3, 84],
+            ["EN-201", "Communication Skills", 3, 85],
+          ],
+        },
+        {
+          name: "Semester 3",
+          courses: [
+            ["CS-301", "Data Structures", 4, 81],
+            ["CS-302", "Database Systems", 3, 87],
+            ["MT-301", "Linear Algebra", 3, 74],
+            ["CS-303", "Computer Organization", 3, 79],
+            ["PS-301", "Pakistan Studies", 2, 91],
+          ],
+        },
+        {
+          name: "Semester 4",
+          courses: [
+            ["CS-401", "Web Engineering", 4, 92],
+            ["CS-402", "Operating Systems", 3, 76],
+            ["CS-403", "Algorithms", 3, 83],
+            ["MT-401", "Probability & Statistics", 3, 77],
+            ["CS-404", "Software Engineering", 3, 88],
+          ],
+        },
+      ];
+      function gradeFor(mark) {
+        return mark >= 85
+          ? ["A", 4]
+          : mark >= 80
+            ? ["A-", 3.67]
+            : mark >= 75
+              ? ["B+", 3.33]
+              : mark >= 70
+                ? ["B", 3]
+                : mark >= 65
+                  ? ["B-", 2.67]
+                  : mark >= 60
+                    ? ["C+", 2.33]
+                    : mark >= 55
+                      ? ["C", 2]
+                      : mark >= 50
+                        ? ["D", 1]
+                        : ["F", 0];
+      }
+      let totalPoints = 0,
+        totalCredits = 0;
+      document.getElementById("transcriptOutput").innerHTML = semesters
+        .map((semester) => {
+          let points = 0,
+            credits = 0;
+          const rows = semester.courses
+            .map((course) => {
+              const [code, name, hours, marks] = course;
+              const [grade, gp] = gradeFor(marks);
+              points += gp * hours;
+              credits += hours;
+              return `<tr><td>${code}</td><td>${name}</td><td>${hours}</td><td>${marks}</td><td>${grade}</td><td>${gp.toFixed(2)}</td></tr>`;
+            })
+            .join("");
+          totalPoints += points;
+          totalCredits += credits;
+          return `<section class="semester-card"><h2>${semester.name}<span>Sample GPA ${(points / credits).toFixed(2)}</span></h2><div class="table-wrap"><table><thead><tr><th>Course code</th><th>Course name</th><th>Credits</th><th>Marks</th><th>Grade</th><th>GP</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
+        })
+        .join("");
+      document.getElementById("cgpa").textContent = (
+        totalPoints / totalCredits
+      ).toFixed(2);
+      document.getElementById("credits").textContent = totalCredits;
+    </script>
+  </body>
 </html>

@@ -1229,7 +1229,8 @@ img {
     min-height: 50px;
     gap: 8px;
     font-size: 14px;
-    border-radius: 12px;
+    /* border-radius: 12px; */
+    border-radius: 24px;
   }
 
   .whatsapp-logo {

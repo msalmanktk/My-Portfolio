@@ -171,8 +171,14 @@
   .footer-inner {
     flex-wrap: wrap;
   }
+  .project-image-wrap {
+    transform: rotate(0);
+  }
 }
 @media (max-width: 520px) {
+  .project-image-wrap {
+    transform: rotate(0);
+  }
   .container {
     width: calc(100% - 30px);
   }
