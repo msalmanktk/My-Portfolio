@@ -135,7 +135,7 @@
 
     typingText.textContent = isDeleting
       ? currentWord.substring(0, charIndex - 1)
-      : currentWord.substring(0, charIndex + 1);
+      : currentWord.substring(0, charIndex + 1); //eik eik word show karta hai
 
     charIndex += isDeleting ? -1 : 1;
 
@@ -153,7 +153,7 @@
     setTimeout(typeEffect, delay);
   }
 
-  typeEffect();
+  // typeEffect();
 
   // const btn = document.querySelector(".skills");
   // const trans = document.querySelector(".transcript");
