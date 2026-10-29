@@ -153,7 +153,7 @@
     setTimeout(typeEffect, delay);
   }
 
-  // typeEffect();
+  typeEffect();
 
   // const btn = document.querySelector(".skills");
   // const trans = document.querySelector(".transcript");

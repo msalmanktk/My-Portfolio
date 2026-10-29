@@ -574,12 +574,13 @@ img {
   );
 }
 .pastel-panel::after {
+  content: "📚";
   /* content: "✳"; */
-  content: "";
   position: absolute;
   right: 24px;
   top: 4px;
-  color: color-mix(in srgb, var(--blue-deep) 25%, transparent);
+  color: color-mix(in srgb, var(--blue-deep) 75%, transparent);
+  /* color: color-mix(in srgb, var(--blue-deep) 25%, transparent); */
   font-size: 8rem;
   line-height: 1;
 }
